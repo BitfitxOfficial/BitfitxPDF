@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitfitxPDF - All-in-One PDF Tools | Merge, Compress, Convert PDFs</title>
+    <meta name="description" content="Free online PDF tools to merge, split, compress, convert PDFs to Word, Excel, PowerPoint and more. 100% free, no registration required.">
+    <meta name="keywords" content="PDF compressor, PDF to Word, Word to PDF, merge PDF, split PDF, compress PDF, Excel to PDF, PDF tools">
+    <meta name="author" content="BitfitxPDF">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bitfitxpdf.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #4cc9f0;
+            --dark: #121212;
+            --light: #f8f9fa;
+            --gray: #e9ecef;
+            --card-bg: #ffffff;
+            --text: #212529;
+            --text-light: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo-text {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text .top {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .logo-text .bottom {
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(rgba(67, 97, 238, 0.9), rgba(67, 97, 238, 0.9)), url('https://images.unsplash.com/photo-1626785774573-4b799315345d') center/cover;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            background-color: white;
+            color: var(--primary);
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(76, 201, 240, 0.1));
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        /* Popular Tools Section */
+        .popular-tools {
+            padding: 80px 0;
+            background-color: var(--gray);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .tool-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: var(--primary);
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(76, 201, 240, 0.1));
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+        }
+
+        .tool-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+
+        .tool-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: calc(50% + 25px);
+            right: calc(-50% + 25px);
+            height: 2px;
+            background-color: var(--primary);
+            opacity: 0.2;
+        }
+
+        .step-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .step h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .step p {
+            color: var(--text-light);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--gray);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--text);
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            top: -20px;
+            left: -15px;
+            color: rgba(67, 97, 238, 0.1);
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            color: var(--secondary);
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Call to Action */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Legal Sections */
+        .legal-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .legal-content h2 {
+            color: var(--secondary);
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .legal-content h3 {
+            color: var(--primary);
+            margin: 25px 0 15px;
+            font-size: 1.3rem;
+        }
+
+        .legal-content p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .legal-content ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .legal-content li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* Coming Soon Badge */
+        .coming-soon {
+            display: inline-block;
+            background-color: #ff9800;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .step:not(:last-child)::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+                display: none;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .features, .popular-tools, .how-it-works, .testimonials, .cta, .legal-section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgNjAiPjxzdHlsZT4uc3Qwe2ZpbGw6I2ZmZjtmb250LWZhbWlseTpBcmlhbDtmb250LXdlaWdodDo3MDA7Zm9udC1zaXplOjI0cHg7fS5zdDF7ZmlsbDojZmZmO2ZvbnQtZmFtaWx5OkFyaWFsO2ZvbnQtd2VpZ2h0OjMwMDtmb250LXNpemU6MTRweDt9PC9zdHlsZT48dGV4dCBjbGFzcz0ic3QwIiB4PSIxMCIgeT0iMjUiPlBERjwvdGV4dD48dGV4dCBjbGFzcz0ic3QwIiB4PSIxMCIgeT0iNDUiPkJpdGZpeFBERjwvdGV4dD48dGV4dCBjbGFzcz0ic3QxIiB4PSIxMTAiIHk9IjQ1Ij4mYW1wOyBXT1JEUzwvdGV4dD48L3N2Zz4=" alt="BitfitxPDF Logo">
+                <div class="logo-text">
+                    <span class="top">PDF</span>
+                    <span class="bottom">BitfitxPDF & WORDS</span>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#tools" class="btn btn-outline">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Your All-in-One PDF Solution</h1>
+            <p>Merge, compress, convert and edit PDF files with our free online tools. No installation or registration required - work with PDFs directly in your browser.</p>
+            <div class="btn-group">
+                <a href="#tools" class="btn btn-primary">Explore Tools</a>
+                <a href="#how-it-works" class="btn btn-outline">How It Works</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Powerful PDF Tools</h2>
+                <p>Everything you need to work with PDF files in one place. 100% free and easy to use.</p>
+            </div>
+            <div class="features-grid">
+                <a href="/img-compress.html" class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-object-group"></i>
+                    </div>
+                    <h3>Merge PDFs</h3>
+                    <p>Combine multiple PDF files into a single document in seconds. Perfect for combining reports, contracts, or presentations.</p>
+                </a>
+                <a href="compress-pdf.html" class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <h3>Compress PDFs</h3>
+                    <p>Reduce PDF file size without losing quality. Optimize your documents for email or web sharing.</p>
+                </a>
+                <a href="pdf-to-word.html" class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Convert Files</h3>
+                    <p>Convert PDFs to Word, Excel, PowerPoint and images. Or create PDFs from other file formats.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Tools Section -->
+    <section class="popular-tools" id="tools">
+        <div class="container">
+            <div class="section-title">
+                <h2>Popular PDF Tools</h2>
+                <p>Our most frequently used tools to help you work with PDF documents.</p>
+            </div>
+            <div class="tools-grid">
+                <a href="merge-pdf.html" class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-object-group"></i>
+                    </div>
+                    <h3>Merge PDF</h3>
+                    <p>Combine multiple PDF files into one document</p>
+                </a>
+                <a href="split-pdf.html" class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Split PDF</h3>
+                    <p>Extract pages or split PDF into multiple files</p>
+                </a>
+                <a href="compress-pdf.html" class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-compress-alt"></i>
+                    </div>
+                    <h3>Compress PDF</h3>
+                    <p>Reduce PDF file size without losing quality</p>
+                </a>
+                <a href="pdf-to-word.html" class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-word"></i>
+                    </div>
+                    <h3>PDF to Word</h3>
+                    <p>Convert PDF to editable Word documents</p>
+                </a>
+                <a href="word-to-pdf.html" class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Word to PDF</h3>
+                    <p>Convert Word documents to PDF format</p>
+                </a>
+                <a href="pdf-to-excel.html" class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h3>PDF to Excel</h3>
+                    <p>Extract tables from PDF to Excel format</p>
+                </a>
+                <a href="pdf-to-jpg.html" class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-file-image"></i>
+                    </div>
+                    <h3>PDF to JPG</h3>
+                    <p>Convert PDF pages to high-quality images</p>
+                </a>
+                <a href="ocr-pdf.html" class="tool-card">
+                    <div class="tool-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>OCR PDF</h3>
+                    <p>Convert scanned PDFs to searchable text</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Get started with BitfitxPDF in just a few simple steps</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Upload Your File</h3>
+                    <p>Drag and drop your PDF or click to browse files on your computer.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Customize Settings</h3>
+                    <p>Adjust options like compression level, output format, or page selection.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Download Result</h3>
+                    <p>Your processed file is ready! Download it instantly to your device.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="legal-section" id="about">
+        <div class="container">
+            <div class="legal-content">
+                <h2>Your Trusted PDF Companion</h2>
+                <p>Welcome to BitfitxPDF, the next-generation PDF app designed to simplify the way you create, edit, and manage your documents. We believe productivity should be effortless, secure, and accessible anytime, anywhere.</p>
+                
+                <p>Our mission is simple: to empower individuals and businesses with a powerful yet easy-to-use PDF solution. Whether you're a student, professional, or entrepreneur, BitfitxPDF offers all-in-one tools to handle your documents with speed and precision. From PDF conversion and annotation to signing and sharing, our platform is built to meet all your digital document needs.</p>
+                
+                <p>With a focus on speed, security, and seamless user experience, our app ensures your files are always safe with advanced encryption. We also value accessibility—our intuitive design works perfectly on mobile, tablet, and desktop, so you can stay productive on the go.</p>
+                
+                <p>At BitfitxPDF, innovation drives everything we do. We constantly update our features to keep pace with modern workflow demands, making it easier than ever to collaborate, store, and organize your PDFs. Whether you're merging reports, highlighting research, or signing contracts, our tools are built to save you time and enhance efficiency.</p>
+                
+                <p>We are committed to creating a smarter, paperless world, reducing clutter and helping you work greener. With global users trusting our platform, we aim to be the most reliable PDF partner in your digital journey.</p>
+                
+                <p>Experience the future of document management with BitfitxPDF—where every PDF task becomes quick, simple, and secure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Users Say</h2>
+                <p>Trusted by thousands of users worldwide</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        BitfitxPDF has saved me countless hours of work. The merge tool is incredibly fast and the quality is perfect every time.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Marketing Director</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        As a student, I use BitfitxPDF daily to compress my lecture notes and convert research papers. It's become an essential tool for my studies.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>University Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Our legal team relies on BitfitxPDF to merge contracts and add watermarks. The security and reliability are outstanding.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily Rodriguez" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <p>Law Firm Partner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your PDF Workflow?</h2>
+            <p>Join thousands of satisfied users who save time with BitfitxPDF every day.</p>
+            <div class="btn-group">
+                <a href="#tools" class="btn btn-primary">Get Started for Free</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms of Service -->
+    <section class="legal-section" id="terms">
+        <div class="container">
+            <div class="legal-content">
+                <h2>Terms of Service</h2>
+                <p><strong>Effective Date: 9/08/2025</strong></p>
+                <p>Welcome to BitfitxPDF ("we," "our," or "us"). These Terms of Service ("Terms") govern your access to and use of our PDF application, website, and related services (collectively, the "Services"). By using our Services, you agree to these Terms. If you do not agree, please discontinue use immediately.</p>
+                
+                <h3>1. Use of Services</h3>
+                <p>You must be at least 13 years old (or the minimum legal age in your country) to use our Services. You agree to use the Services only for lawful purposes and in accordance with these Terms. Unauthorized access, reverse engineering, or misuse of the app is strictly prohibited.</p>
+                
+                <h3>2. Account Registration</h3>
+                <p>To access certain features, you may need to create an account. You are responsible for maintaining the confidentiality of your credentials and all activities under your account. Notify us immediately if you suspect unauthorized use.</p>
+                
+                <h3>3. File Processing & Storage</h3>
+                <p>You may upload files for processing, conversion, editing, or storage. We process files securely and delete them after completion unless you choose to store them. You are solely responsible for the legality and content of uploaded files.</p>
+                
+                <h3>4. Intellectual Property</h3>
+                <p>All content, software, and design within the Services are owned or licensed by BitfitxPDF and protected by copyright, trademark, and other laws. You may not reproduce, distribute, or create derivative works without prior written consent.</p>
+                
+                <h3>5. Limitation of Liability</h3>
+                <p>We are not liable for indirect, incidental, or consequential damages arising from your use of the Services. All features are provided "as is" without warranties of any kind.</p>
+                
+                <h3>6. Changes to Terms</h3>
+                <p>We may modify these Terms at any time. Continued use after changes indicates acceptance.</p>
+                
+                <p>For questions, contact us at <a href="mailto:bitfitxofficial1@gmail.com">bitfitxofficial1@gmail.com</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy -->
+    <section class="legal-section" id="privacy">
+        <div class="container">
+            <div class="legal-content">
+                <h2>Privacy Policy</h2>
+                <p><strong>Effective Date: 9/08/2025</strong></p>
+                <p>BitfitxPDF ("we," "our," or "us") values your privacy. This Privacy Policy explains how we collect, use, and protect your personal information when you use our mobile application, website, and related services (collectively, the "Services"). By accessing or using our Services, you consent to this policy.</p>
+                
+                <h3>1. Information We Collect</h3>
+                <p>We collect:</p>
+                <ul>
+                    <li><strong>Personal Information:</strong> Name, email address, payment details, and account credentials when you register or purchase services.</li>
+                    <li><strong>Files & Documents:</strong> PDF or other files you upload for processing.</li>
+                </ul>
+                
+                <h3>2. How We Use Your Information</h3>
+                <p>We use your data to:</p>
+                <ul>
+                    <li>Provide and improve our Services.</li>
+                    <li>Send service-related notifications.</li>
+                    <li>Ensure security and prevent fraudulent activity.</li>
+                </ul>
+                
+                <h3>3. Data Security</h3>
+                <p>We use encryption, secure servers, and industry-standard safeguards to protect your data. While we strive for maximum protection, no method of transmission or storage is completely secure.</p>
+                
+                <h3>4. File Processing & Retention</h3>
+                <p>Uploaded files are processed securely and deleted from our servers after completion unless you choose cloud storage. Stored files remain encrypted and accessible only to you.</p>
+                
+                <h3>5. Third-Party Services</h3>
+                <p>We may integrate with third-party providers (e.g., cloud storage, payment processors). Their use of your data is governed by their privacy policies.</p>
+                
+                <h3>6. Your Rights</h3>
+                <p>You may request access, correction, deletion, or portability of your personal data as permitted by applicable law (GDPR, CCPA). Contact us at <a href="mailto:Bitfitxofficial1@gmail.com">Bitfitxofficial1@gmail.com</a>.</p>
+                
+                <h3>7. Changes to This Policy</h3>
+                <p>We may update this policy periodically. Continued use of our Services constitutes acceptance of the revised policy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GDPR Compliance -->
+    <section class="legal-section" id="gdpr">
+        <div class="container">
+            <div class="legal-content">
+                <h2>GDPR Compliance Statement</h2>
+                <p><strong>Effective Date: 9/08/2025</strong></p>
+                <p>At BitfitxPDF, we are committed to protecting your privacy and complying with the General Data Protection Regulation (GDPR) for our users in the European Union (EU) and European Economic Area (EEA). This statement outlines your rights and how we process your personal data.</p>
+                
+                <h3>1. Lawful Basis for Processing</h3>
+                <p>We process your personal data only when we have a legal basis, including:</p>
+                <ul>
+                    <li>Your consent for specific processing activities.</li>
+                    <li>Fulfilling a contract (e.g., providing PDF services you requested).</li>
+                    <li>Compliance with legal obligations.</li>
+                    <li>Our legitimate business interests, provided they do not override your rights.</li>
+                </ul>
+                
+                <h3>2. Data We Collect</h3>
+                <p>We may collect:</p>
+                <ul>
+                    <li>Personal information (name, email address, payment details).</li>
+                    <li>Usage data (device type, IP address, app activity).</li>
+                    <li>Files you upload for processing (PDFs, documents).</li>
+                </ul>
+                
+                <h3>3. Your GDPR Rights</h3>
+                <p>Under GDPR, you have the right to:</p>
+                <ul>
+                    <li>Access your personal data.</li>
+                    <li>Request correction or deletion.</li>
+                    <li>Withdraw consent at any time.</li>
+                    <li>Request data portability.</li>
+                    <li>Object to certain types of processing.</li>
+                </ul>
+                <p>To exercise these rights, contact us at <a href="mailto:bitfitxofficial1@gmail.com">bitfitxofficial1@gmail.com</a>. We respond within the timelines required by GDPR.</p>
+                
+                <h3>4. Data Security & Retention</h3>
+                <p>We use encryption, secure servers, and strict access controls to protect your data. Uploaded files are processed securely and deleted after completion unless you choose to store them. We retain personal data only as long as necessary for the purposes collected.</p>
+                
+                <h3>5. International Data Transfers</h3>
+                <p>If we transfer your data outside the EEA, we ensure adequate safeguards are in place, such as EU-approved Standard Contractual Clauses.</p>
+                
+                <h3>6. Contact</h3>
+                <p>If you have questions about GDPR compliance, contact us at <a href="mailto:bitfitxofficial1@gmail.com">bitfitxofficial1@gmail.com</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PDF Tools</h3>
+                    <ul>
+                        <li><a href="merge-pdf.html">Merge PDF</a></li>
+                        <li><a href="split-pdf.html">Split PDF</a></li>
+                        <li><a href="compress-pdf.html">Compress PDF</a></li>
+                        <li><a href="pdf-to-word.html">PDF to Word</a></li>
+                        <li><a href="word-to-pdf.html">Word to PDF</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Word Tools</h3>
+                    <ul>
+                        <li><a href="word-to-pdf.html">Word to PDF</a></li>
+                        <li><a href="word-to-excel.html">Word to Excel</a></li>
+                        <li><a href="word-compressor.html">Word Compressor</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers <span class="coming-soon">✗ Coming Soon</span></a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#gdpr">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p style="margin-top: 20px; color: rgba(255, 255, 255, 0.7);">
+                        <i class="fas fa-envelope"></i> support@bitfitxpdf.com
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BitfitxPDF. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('show');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        document.getElementById('navMenu').classList.remove('show');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
